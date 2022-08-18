@@ -1,8 +1,12 @@
 [![Okta Training](./.tour-resources/oktaeduservices.png "Okta Education Services")](https://www.okta.com/services/training/)
 
-# Lab Node Template
+# Migrating and Managing Users
 
-An Okta Training lab template for Customer Identity courses. Replace this section with the title of your Module and a brief description.
+This repo contains everything you need to complete the labs in this module:
+
+- Lab 6-1: Create Okta User with Imported Hashed Password
+- Lab 6-2: 
+- Lab 6-3: 
 
 ## How to Use
 

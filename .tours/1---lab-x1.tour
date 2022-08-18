@@ -1,5 +1,14 @@
 {
   "$schema": "https://aka.ms/codetour-schema",
-  "title": "#1 - Lab X.1 Put Lab Title Here",
-  "steps": []
+  "title": "#1 - Lab 6.1 Create Okta User with Imported Hashed Password",
+  "steps": [
+    {
+      "title": "Lab Overview",
+      "description": "## Lab 6.1: Create Okta User with Imported Hashed Password"
+    },
+    {
+      "title": "Lab Checkpoint",
+      "description": "## ✅ Checkpoint\n\nAt this point, "
+    }
+  ]
 }
