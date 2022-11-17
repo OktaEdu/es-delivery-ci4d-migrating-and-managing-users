@@ -4,25 +4,14 @@
 
 This repo contains everything you need to complete the labs in this module:
 
-- Lab 6-1: Create Okta User with Imported Hashed Password
-- Lab 6-2: 
-- Lab 6-3: 
+- Lab 6.1: Create Okta User with Imported Hashed Password
+- Lab 6.2: 
+- Lab 6.3: 
 
-## How to Use
+## How to Start the Labs
 
-1. Clone this codebase: 
-```
-git clone https://github.com/OktaEdu/es-delivery-ci4d-...
-```
-2. Navigate to your local repo: 
-```
-cd /es-delivery-ci4d-...
-```
-3. Open in VSCode: 
-```
-code .
-```
-4. The CodeTour for Lab X.1 will open automatically. If it doesn't, press the `Start Tour` button.
+
+These labs are guided by a VSCode plugin called CodeTour. To start Lab 6.1, first expand the **CODETOUR** tab on the lefthand side of VSCode. Then press the ![Start Tour](./.tour-resources/play.png) button next to Lab 6.1.
 
 ![Start Code Tour](./.tour-resources/start-tour.gif)
 
