@@ -4,9 +4,8 @@
 
 This repo contains everything you need to complete the labs in this module:
 
-- Lab 6.1: Create Okta User with Imported Hashed Password
-- Lab 6.2: 
-- Lab 6.3: 
+- Lab 6.1: Migrate Users and Hashed Passwords with Okta's Users API
+- Lab 6.2: Migrate Users and Passwords with Okta's Inline Password Hook
 
 ## How to Start the Labs
 

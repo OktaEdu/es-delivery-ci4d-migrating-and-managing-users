@@ -1,14 +1,34 @@
 {
   "$schema": "https://aka.ms/codetour-schema",
-  "title": "#1 - Lab 6.1 Create Okta User with Imported Hashed Password",
+  "title": "Lab 6.1 Migrate Users and Hashed Passwords with Okta's Users API",
   "steps": [
     {
       "title": "Lab Overview",
-      "description": "## Lab 6.1: Create Okta User with Imported Hashed Password\n\n🎯 Objective: \n\n⏱️ Duration: "
+      "description": "## Lab 6.1: Migrate Users and Hashed Passwords with Okta's Users API\n🎯 **Objective** Migrate users with Okta's Users API\n\n🎬 **Scenario** Okta Ice has an existing data store of customers that they would like to migrate to Okta. They want customers to be able to sign in with their existing passwords. Since the passwords are hashed and salted, they can import these in bulk using Okta's Users API.\n\n⏱️ **Duration** 20 minutes"
+    },
+    {
+      "title": "Examine the Create User with imported Hashed Password API Endpoint",
+      "description": "\n## Examine the Create User with Imported Hashed Password API Endpoint\n\nOkta's Users API has an endpoint that allows us to [create a user with an imported hashed password](https://developer.okta.com/docs/reference/api/users/#create-user-with-imported-hashed-password).\n\nIt is similar to the `Create User` endpoint we used in Module 3, except we provide some additional details in the `credentials.password` entry of the JSON request payload:\n\n```json\n\"credentials\": {\n    \"password\" : {\n      \"hash\": {\n        \"algorithm\": {{algorithm-name}},\n        \"workFactor\": {{workfactor-value}},\n        \"salt\": {{salt-value}},\n        \"value\": {{hashed-password}}\n      }\n    }\n  }\n```\n\nNotice that, instead of just providing a password value, we provide the hashing algorithm, a workfactor (if relevant to the hashing algorithm), the salt value, and the hashed value of the password.\n\nLet's create this API request in Postman."
+    },
+    {
+      "title": "Create a New API Request in Postman",
+      "description": "## Create a New API Request in Postman\n\nSince the Create User with imported Hashed Password API request is not included in the Okta Users API collection, we will have to create it. We'll do this by duplicating a similar request, renaming it, and modifying the body of the request.\n\n1. Open Postman\n\n2. Ensure your Environment is set to the environment you created in Module 3. It should have the same name as your Okta org.\n\n3. Expand the `Users (Okta API)` collection\n\n4. Expand the `Create User` folder\n\n5. Right click on `Create Activated User with Password` and select `Duplicate`\n\n6. In the new API request tab that opens, hover your mouse over the title (`Create Activated User with Password Copy`) and the pencil icon that appears.\n\n7. Rename this API request `Create User with Imported Hashed Password`\n\n8. Click `Save`"
+    },
+    {
+      "title": "Modify the Request Body of the Create User with Imported Hashed Password API Request",
+      "description": "## Modify the Request Body of the Create User with Imported Hashed Password API Request\n\n1. Notice that this is a `POST` request. We are going to be sending data via the request body.\n\n2. Delete the contents of the request body.\n\n3. Copy the following JSON and paste it into the request body:\n\n```\n{\n  \"profile\": {\n    \"firstName\": \"Hashem\",\n    \"lastName\": \"Pesar\",\n    \"email\": \"hashem.pesar@{{email-suffix}}\",\n    \"login\": \"hashem.pesar@{{email-suffix}}\",\n    \"userType\": \"customer\"\n  },\n\"credentials\": {\n    \"password\" : {\n      \"hash\": {\n        \"algorithm\": \"BCRYPT\",\n        \"workFactor\": 12,\n        \"salt\": \"S77ORXjoSbjRMdvG/Yvc0u\",\n        \"value\": \"x6WB1d4z5BjpeuyANyVWZqBbIfCq24q\"\n            }\n        }\n    }\n}\n```\n\nThis will import our existing user with a username of `hashem.pesar@oktaice.com` and their existing password that was previously hashed using the bcrypt algorithm with the salt provided. Notice that we also specify a `userType` of `customer` so that our existing Group Rule (Lab 1.2) will assign this user to the `Customers` group. This will give this user access to the customer apps."
+    },
+    {
+      "title": "Create the User with an Imported Hashed Password",
+      "description": "## Create the User with an Imported Hashed Password\n\n1. Click `Send` in Postman.\n\n2. Examine the JSON response from Okta.\n\nYou'll notice Okta echoes back the user profile details. If you look at the `credentials` entry, you should see:\n\n```\n\"credentials\": {\n        \"password\": {},\n        \"provider\": {\n            \"type\": \"IMPORT\",\n            \"name\": \"IMPORT\"\n        }\n```\n\nThis indicates that the user credentials were imported from an external source via the API."
+    },
+    {
+      "title": "Test the Imported User",
+      "description": "## Test the Imported User\n\n1. Click [here to copy the previously configured applications](command:codetour.sendTextToTerminal?[\"mkdir redirect; mkdir embedded; cp ../03-exploring-authentication-protocol-flows/redirect/* redirect; cp ../03-exploring-authentication-protocol-flows/* embedded\"]).\n\n2. Click [here to launch the web server](command:codetour.sendTextToTerminal?[\"python -m http.server 8080\"]).\n\n3. Navigate to http://localhost:8080\n\n4. Click `Rewards App (Redirect)`\n\n5. Enter `hashem.pesar@oktaice.com` as the **Username**\n\n6. Click `Next`\n\n7. Enter `Tra!nme4321` as the password\n\n8. Click `Verify`\n\n9. Once you are redirected to the Rewards App, click `Close Okta Session`"
     },
     {
       "title": "Lab Checkpoint",
-      "description": "## ✅ Checkpoint\n\nAt this point, "
+      "description": "## ✅ Checkpoint\n\nAt this point, you have successfully imported an existing customer with their hashed password into Okta! In a real-world scenario, you would import users in bulk.\n\nOkta employs built-in rate limit controls designed to protect the Okta service from the negative impacts that high traffic levels can create. This enables Okta to maintain service uptime and stability. As a result, during heavy usage periods an Okta tenant might experience traffic spikes that cause rate limits to go into effect. To avoid having rate limits impact your migration it’s suggested that you work with Okta support to plan your user migration during a time when rate limits can be temporarily adjusted and identify what the available options are for doing so."
     }
   ]
 }
