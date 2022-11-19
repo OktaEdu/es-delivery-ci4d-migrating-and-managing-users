@@ -28,7 +28,7 @@
     },
     {
       "title": "Lab Checkpoint",
-      "description": "## ✅ Checkpoint\n\nAt this point, you have successfully imported an existing customer with their hashed password into Okta! In a real-world scenario, you would import users in bulk.\n\nOkta employs built-in rate limit controls designed to protect the Okta service from the negative impacts that high traffic levels can create. This enables Okta to maintain service uptime and stability. As a result, during heavy usage periods an Okta tenant might experience traffic spikes that cause rate limits to go into effect. To avoid having rate limits impact your migration it’s suggested that you work with Okta support to plan your user migration during a time when rate limits can be temporarily adjusted and identify what the available options are for doing so."
+      "description": "## ✅ Checkpoint\n\nAt this point, you have successfully imported an existing customer with their hashed password into Okta! In a real-world scenario, you would import users in bulk.\n\nOkta employs built-in rate limit controls designed to protect the Okta service from the negative impacts that high traffic levels can create. This enables Okta to maintain service uptime and stability. As a result, during heavy usage periods an Okta tenant might experience traffic spikes that cause rate limits to go into effect. To avoid having rate limits impact your migration it’s suggested that you work with Okta support to plan your user migration during a time when rate limits can be temporarily adjusted and identify what the available options are for doing so.\n\n### 🎉 End of Module 6 Labs\n\n**You may close this workspace project, ensuring all changes were saved.**"
     }
   ]
 }
