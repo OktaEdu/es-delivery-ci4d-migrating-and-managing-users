@@ -24,7 +24,7 @@
     },
     {
       "title": "Test the Imported User",
-      "description": "## Test the Imported User\n\n1. Click [here to copy the previously configured applications](command:codetour.sendTextToTerminal?[\"mkdir redirect; mkdir embedded; cp ../03-exploring-authentication-protocol-flows/redirect/* redirect; cp ../03-exploring-authentication-protocol-flows/* embedded\"]).\n\n2. Click [here to launch the web server](command:codetour.sendTextToTerminal?[\"python -m http.server 8080\"]).\n\n3. Navigate to http://localhost:8080\n\n4. Click `Rewards App (Redirect)`\n\n5. Enter `hashem.pesar@oktaice.com` as the **Username**\n\n6. Click `Next`\n\n7. Enter `Tra!nme4321` as the password\n\n8. Click `Verify`\n\n9. Once you are redirected to the Rewards App, click `Close Okta Session`"
+      "description": "## Test the Imported User\n\n1. Click [here to copy the previously configured applications](command:codetour.sendTextToTerminal?[\"mkdir redirect; mkdir embedded; cp ../03-exploring-authentication-protocol-flows/redirect/* redirect; cp ../03-exploring-authentication-protocol-flows/embedded/* embedded\"]).\n\n2. Click [here to launch the web server](command:codetour.sendTextToTerminal?[\"python -m http.server 8080\"]).\n\n3. Navigate to http://localhost:8080\n\n4. Click `Rewards App (Redirect)`\n\n5. Enter `hashem.pesar@oktaice.com` as the **Username**\n\n6. Click `Next`\n\n7. Enter `Tra!nme4321` as the password\n\n8. Click `Verify`\n\n9. Once you are redirected to the Rewards App, click `Close Okta Session`"
     },
     {
       "title": "Lab Checkpoint",
