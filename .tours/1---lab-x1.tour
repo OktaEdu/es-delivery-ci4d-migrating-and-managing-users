@@ -4,7 +4,7 @@
   "steps": [
     {
       "title": "Lab Overview",
-      "description": "## Lab 6.1: Migrate Users and Hashed Passwords with Okta's Users API\n🎯 **Objective** Migrate users with Okta's Users API\n\n🎬 **Scenario** Okta Ice has an existing data store of customers that they would like to migrate to Okta. They want customers to be able to sign in with their existing passwords. Since the passwords are hashed and salted, they can import these in bulk using Okta's Users API.\n\n⏱️ **Duration** 20 minutes"
+      "description": "## Lab 6.1: Migrate Users and Hashed Passwords with Okta's Users API\n🎯 **Objective** Migrate users with Okta's Users API\n\n🎬 **Scenario** Okta Ice has an existing data store of customers that they would like to migrate to Okta. They want customers to be able to sign in with their existing passwords. Since the passwords are hashed and salted, they can import these in bulk using Okta's Users API.\n\n⏱️ **Duration** 20 minutes\n\n⚠️ Prerequisite: Lab 4.1"
     },
     {
       "title": "Examine the Create User with imported Hashed Password API Endpoint",
